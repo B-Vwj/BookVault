@@ -1,0 +1,18 @@
+# IntelliJ
+.idea/
+*.iml
+
+# Build
+build/
+
+# macOS
+.DS_Store
+
+# Environment / secrets
+local.properties
+*.env
+.env*
+
+# Gradle
+.gradle/
+gradle/wrapper/gradle-wrapper.jar
