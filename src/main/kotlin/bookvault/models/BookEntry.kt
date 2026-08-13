@@ -2,6 +2,8 @@ package com.bookvault.models
 
 import kotlinx.serialization.Serializable
 
+typealias BookRequest = BookEntry
+
 @Serializable
 data class BookEntry(
     val openLibraryId: String? = null,

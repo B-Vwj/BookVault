@@ -19,6 +19,7 @@ kotlin {
     }
 }
 dependencies {
+    // Ktor server
     implementation(ktorLibs.serialization.kotlinx.json)
     implementation(ktorLibs.server.auth)
     implementation(ktorLibs.server.auth.jwt)
@@ -27,6 +28,12 @@ dependencies {
     implementation(ktorLibs.server.core)
     implementation(ktorLibs.server.cors)
     implementation(ktorLibs.server.netty)
+
+    // Ktor client
+    implementation(ktorLibs.client.core)
+    implementation(ktorLibs.client.cio)
+    implementation("io.ktor:ktor-client-content-negotiation:3.4.3")
+
     implementation(libs.logback.classic)
     implementation(libs.dotenv)
 
