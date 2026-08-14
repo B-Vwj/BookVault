@@ -15,9 +15,8 @@ fun Application.configureHttp() {
         allowMethod(HttpMethod.Delete)
         allowHeader(HttpHeaders.Authorization)
         allowHeader(HttpHeaders.ContentType)
-//        allowCredentials = true
-        allowHost("temporary-racing-zinc-s7x14qf.vercel.app", schemes = listOf("http", "https"))
-        allowHost("book-vault-b-vwjs-projects.vercel.app", schemes = listOf("http", "https"))
+        allowHost("temporary-racing-zinc-s7x14qf.vercel.app", schemes = listOf("https"))
+        allowHost("book-vault-b-vwjs-projects.vercel.app", schemes = listOf("https"))
         allowHost("localhost:3000", schemes = listOf("http"))
     }
 }

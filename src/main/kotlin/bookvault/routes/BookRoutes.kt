@@ -13,13 +13,22 @@ import io.ktor.server.response.respond
 import io.ktor.server.routing.Routing
 import io.ktor.server.routing.delete
 import io.ktor.server.routing.get
+import io.ktor.server.routing.options
 import io.ktor.server.routing.post
 import io.ktor.server.routing.put
 import io.ktor.server.routing.route
+import jdk.internal.vm.ScopedValueContainer.call
 import kotlin.uuid.Uuid
 
 @OptIn(ExperimentalUuidApi::class)
 fun Routing.bookRoutes() {
+    options("/books") {
+        call.respond(HttpStatusCode.OK)
+    }
+    options("/books/{id}") {
+        call.respond(HttpStatusCode.OK)
+    }
+
     authenticate {
         route("/books") {
             // GET /books - get all books for session
