@@ -8,15 +8,19 @@ import io.ktor.server.plugins.cors.routing.CORS
 
 fun Application.configureHttp() {
     install(CORS) {
+        allowHost("temporary-racing-zinc-s7x14qf.vercel.app", schemes = listOf("https"))
+        allowHost("book-vault-b-vwjs-projects.vercel.app", schemes = listOf("https"))
+        allowHost("localhost:3000", schemes = listOf("http"))
+
+        allowHeader(HttpHeaders.Authorization)
+        allowHeader(HttpHeaders.ContentType)
+
+        allowCredentials = true
+
         allowMethod(HttpMethod.Options)
         allowMethod(HttpMethod.Get)
         allowMethod(HttpMethod.Post)
         allowMethod(HttpMethod.Put)
         allowMethod(HttpMethod.Delete)
-        allowHeader(HttpHeaders.Authorization)
-        allowHeader(HttpHeaders.ContentType)
-        allowHost("temporary-racing-zinc-s7x14qf.vercel.app", schemes = listOf("https"))
-        allowHost("book-vault-b-vwjs-projects.vercel.app", schemes = listOf("https"))
-        allowHost("localhost:3000", schemes = listOf("http"))
     }
 }
