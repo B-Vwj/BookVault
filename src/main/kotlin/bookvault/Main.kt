@@ -16,10 +16,6 @@ fun main(args: Array<String>) {
 
 @Suppress("unused")
 fun Application.module() {
-    println(environment.config.property("jwt.secret").getString())
-    println(environment.config.property("jwt.issuer").getString())
-    println(environment.config.property("jwt.audience").getString())
-
     DatabaseFactory.init(
         url = environment.config.property("database.url").getString(),
         user = environment.config.property("database.user").getString(),
