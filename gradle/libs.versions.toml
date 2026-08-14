@@ -5,6 +5,8 @@ exposed = "1.2.0"
 postgresql = "42.7.11"
 hikaricp = "7.0.0"
 dotenv = "6.5.1"
+mockk = "1.13.10"
+coroutines-test = "1.8.1"
 
 [libraries]
 logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
@@ -15,6 +17,8 @@ exposed-java-time = { module = "org.jetbrains.exposed:exposed-java-time", versio
 postgresql = { module = "org.postgresql:postgresql", version.ref = "postgresql" }
 hikaricp = { module = "com.zaxxer:HikariCP", version.ref = "hikaricp" }
 dotenv = { module = "io.github.cdimascio:dotenv-kotlin", version.ref = "dotenv" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines-test" }
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
