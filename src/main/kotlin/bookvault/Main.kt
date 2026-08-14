@@ -7,19 +7,20 @@ import io.ktor.server.application.Application
 import io.ktor.server.netty.EngineMain
 
 fun main(args: Array<String>) {
-    dotenv {
-        systemProperties = true
-        ignoreIfMissing = true
-    }
     EngineMain.main(args)
 }
 
 @Suppress("unused")
 fun Application.module() {
+    val env = dotenv {
+        systemProperties = true
+        ignoreIfMissing = true
+    }
+
     DatabaseFactory.init(
-        url = environment.config.property("database.url").getString(),
-        user = environment.config.property("database.user").getString(),
-        password = environment.config.property("database.password").getString()
+        url = env["DB_URL"],
+        user = env["DB_USER"],
+        password = env["DB_PASSWORD"]
     )
 
     configureSecurity(
