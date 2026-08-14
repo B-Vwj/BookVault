@@ -28,6 +28,7 @@ dependencies {
     implementation(ktorLibs.server.core)
     implementation(ktorLibs.server.cors)
     implementation(ktorLibs.server.netty)
+    implementation(ktorLibs.server.callLogging)
 
     // Ktor client
     implementation(ktorLibs.client.core)
