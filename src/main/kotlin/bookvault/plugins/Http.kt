@@ -16,6 +16,7 @@ fun Application.configureHttp() {
         allowHeader(HttpHeaders.Authorization)
         allowHeader(HttpHeaders.ContentType)
         allowCredentials = true
-        anyHost() // TODO: restrict to Vercel URL in production
+        allowHost("http://temporary-racing-zinc-s7x14qf.vercel.app/", schemes = listOf("https"))
+        allowHost("localhost:3000", schemes = listOf("http"))
     }
 }
